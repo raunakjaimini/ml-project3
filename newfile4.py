@@ -19,111 +19,111 @@ load_dotenv()
 st.set_page_config(page_title="ML Project", page_icon="✨")
 
 # Define styles for light and dark modes
-light_mode_css = """
-    <style>
-        .header {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .css-1v3fvcr {
-            background-color: #f0f0f0;
-            color: #000000;
-        }
-        .css-1v3fvcr thead th {
-            background-color: #cccccc;
-            color: #000000;
-        }
-        .css-1v3fvcr tbody tr:nth-child(even) {
-            background-color: #e0e0e0;
-        }
-        .css-1v3fvcr tbody tr:nth-child(odd) {
-            background-color: #f0f0f0;
-        }
-        .css-1x8l5p6 {
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        .user {
-            background-color: #e0e0e0;
-            color: #000000;
-            text-align: right;
-        }
-        .assistant {
-            background-color: #cccccc;
-            color: #000000;
-        }
-        .bottom-buttons {
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
-"""
+# light_mode_css = """
+#     <style>
+#         .header {
+#             background-color: #ffffff;
+#             color: #000000;
+#             padding: 10px;
+#             text-align: center;
+#             border-radius: 10px;
+#         }
+#         .header h1 {
+#             margin: 0;
+#             font-size: 2.5em;
+#         }
+#         .css-1v3fvcr {
+#             background-color: #f0f0f0;
+#             color: #000000;
+#         }
+#         .css-1v3fvcr thead th {
+#             background-color: #cccccc;
+#             color: #000000;
+#         }
+#         .css-1v3fvcr tbody tr:nth-child(even) {
+#             background-color: #e0e0e0;
+#         }
+#         .css-1v3fvcr tbody tr:nth-child(odd) {
+#             background-color: #f0f0f0;
+#         }
+#         .css-1x8l5p6 {
+#             border-radius: 8px;
+#             padding: 10px;
+#             margin-bottom: 10px;
+#         }
+#         .user {
+#             background-color: #e0e0e0;
+#             color: #000000;
+#             text-align: right;
+#         }
+#         .assistant {
+#             background-color: #cccccc;
+#             color: #000000;
+#         }
+#         .bottom-buttons {
+#             margin-top: 20px;
+#             text-align: center;
+#         }
+#     </style>
+# """
 
-dark_mode_css = """
-    <style>
-        .header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .css-1v3fvcr {
-            background-color: #2e2e2e;
-            color: #d0d0d0;
-        }
-        .css-1v3fvcr thead th {
-            background-color: #4a4a4a;
-            color: #ffffff;
-        }
-        .css-1v3fvcr tbody tr:nth-child(even) {
-            background-color: #3c3c3c;
-        }
-        .css-1v3fvcr tbody tr:nth-child(odd) {
-            background-color: #2e2e2e;
-        }
-        .css-1x8l5p6 {
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        .user {
-            background-color: grey;
-            color: #ffffff;
-            text-align: right;
-        }
-        .assistant {
-            background-color: darkgrey;
-            color: #ffffff;
-        }
-        .bottom-buttons {
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
-"""
+# dark_mode_css = """
+#     <style>
+#         .header {
+#             background-color: #1f1f1f;
+#             color: #e0e0e0;
+#             padding: 10px;
+#             text-align: center;
+#             border-radius: 10px;
+#         }
+#         .header h1 {
+#             margin: 0;
+#             font-size: 2.5em;
+#         }
+#         .css-1v3fvcr {
+#             background-color: #2e2e2e;
+#             color: #d0d0d0;
+#         }
+#         .css-1v3fvcr thead th {
+#             background-color: #4a4a4a;
+#             color: #ffffff;
+#         }
+#         .css-1v3fvcr tbody tr:nth-child(even) {
+#             background-color: #3c3c3c;
+#         }
+#         .css-1v3fvcr tbody tr:nth-child(odd) {
+#             background-color: #2e2e2e;
+#         }
+#         .css-1x8l5p6 {
+#             border-radius: 8px;
+#             padding: 10px;
+#             margin-bottom: 10px;
+#         }
+#         .user {
+#             background-color: grey;
+#             color: #ffffff;
+#             text-align: right;
+#         }
+#         .assistant {
+#             background-color: darkgrey;
+#             color: #ffffff;
+#         }
+#         .bottom-buttons {
+#             margin-top: 20px;
+#             text-align: center;
+#         }
+#     </style>
+# """
+
 
 # Sidebar for theme selection
-st.sidebar.title("Settings")
-theme = st.sidebar.radio("Select Theme", ["Light Mode", "Dark Mode"])
+st.sidebar.title("Settings⚙️")
 
-# Apply the selected theme
-if theme == "Light Mode":
-    st.markdown(light_mode_css, unsafe_allow_html=True)
-else:
-    st.markdown(dark_mode_css, unsafe_allow_html=True)
+# # Apply the selected theme
+# if theme == "Light Mode":
+#     st.markdown(light_mode_css, unsafe_allow_html=True)
+# else:
+#     st.markdown(dark_mode_css, unsafe_allow_html=True)
 
 # Retrieve the Groq API key from the .env file
 api_key = os.getenv("GROQ_API_KEY")
