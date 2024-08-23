@@ -205,7 +205,7 @@ agent = create_sql_agent(
 
 # Initialize session state for messages if not already present
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you sir?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Ask me anything?"}]
 
 # Input for user query
 user_query = st.chat_input(placeholder="Ask anything from the database")
